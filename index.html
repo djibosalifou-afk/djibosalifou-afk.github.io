@@ -7,200 +7,193 @@
   <title>Salifou Djibo Abdou – Spécialiste Suivi-Évaluation</title>
   <!-- Description affichée par Google sous le titre du site -->
   <meta name="description" content="Spécialiste en Suivi-Évaluation avec plus de 14 ans d'expérience dans les projets de développement au Niger (Banque mondiale, Union européenne, PNUD).">
-  <!-- Police d'écriture gratuite de Google -->
+  <!-- Deux polices gratuites de Google : une à empattements pour les titres, une simple pour le texte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ===== Barre de navigation ===== -->
-  <header class="navbar">
-    <a class="logo" href="#accueil">SDA<span>.</span></a>
-    <nav>
-      <a href="#apropos">À propos</a>
-      <a href="#experience">Expérience</a>
+  <!-- ===== En-tête et menu ===== -->
+  <header class="entete">
+    <a class="nom-site" href="#accueil">Salifou Djibo Abdou</a>
+    <nav aria-label="Menu principal">
+      <a href="#parcours">Parcours</a>
       <a href="#competences">Compétences</a>
       <a href="#formation">Formation</a>
-      <a class="nav-contact" href="#contact">Contact</a>
+      <a class="lien-contact" href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- ===== Section d'accueil ===== -->
-  <section id="accueil" class="hero">
-    <div class="hero-contenu">
-      <div class="hero-texte">
-        <p class="badge">📍 Niamey, Niger</p>
-        <h1>Salifou <span>Djibo Abdou</span></h1>
+  <main>
+
+    <!-- ===== Accueil ===== -->
+    <section id="accueil" class="accueil">
+      <div class="accueil-texte">
+        <h1>Salifou Djibo Abdou</h1>
         <p class="metier">Spécialiste en Suivi-Évaluation</p>
-        <p class="accroche">
-          Plus de 14 ans à mesurer, analyser et améliorer l'impact des projets de développement
-          financés par la Banque mondiale, l'Union européenne et le PNUD.
+        <p class="intro">
+          Depuis plus de 14 ans, je mesure et j'analyse les résultats de projets de développement
+          au Niger, dont plus de 8 ans sur des projets financés par la Banque mondiale.
         </p>
-        <div class="hero-boutons">
+        <div class="boutons">
           <a class="bouton" href="#contact">Me contacter</a>
-          <a class="bouton contour" href="#experience">Voir mon parcours</a>
+          <a class="bouton bouton-secondaire" href="#parcours">Voir mon parcours</a>
         </div>
+
+        <!-- Les informations essentielles, en une ligne -->
+        <dl class="faits">
+          <div><dt>Basé à</dt><dd>Niamey, Niger</dd></div>
+          <div><dt>Bailleurs</dt><dd>Banque mondiale, Union européenne, PNUD</dd></div>
+          <div><dt>Secteur</dt><dd>Énergie et accès à l'électricité</dd></div>
+        </dl>
       </div>
-      <img class="photo" src="photo.jpg" alt="Photo de Salifou Djibo Abdou">
-    </div>
+      <img class="photo" src="photo.jpg" width="280" height="280" alt="Portrait de Salifou Djibo Abdou">
+    </section>
 
-    <!-- Chiffres clés -->
-    <div class="chiffres">
-      <div><strong>14+</strong><span>années d'expérience</span></div>
-      <div><strong>8+</strong><span>ans sur des projets Banque mondiale</span></div>
-      <div><strong>3</strong><span>grands projets nationaux</span></div>
-      <div><strong>2</strong><span>langues de travail</span></div>
-    </div>
-  </section>
+    <!-- ===== À propos ===== -->
+    <section id="apropos" class="section deux-parties">
+      <h2>À propos</h2>
+      <div class="texte">
+        <p>
+          Mon métier consiste à vérifier qu'un projet atteint ses objectifs, et à le montrer avec des
+          données fiables. Je mets en place les systèmes de suivi, je collecte les données sur le
+          terrain ou à distance, je suis les indicateurs de performance et je rédige les rapports
+          destinés aux bailleurs de fonds.
+        </p>
+        <p>
+          Ingénieur de formation (Master en Génie Électrique), j'utilise aussi les outils SIG pour
+          cartographier les infrastructures, et je forme les équipes aux méthodes de suivi-évaluation.
+        </p>
+      </div>
+    </section>
 
-  <!-- ===== À propos ===== -->
-  <section id="apropos" class="section">
-    <h2>À propos</h2>
-    <div class="apropos">
-      <p>
-        Je suis <strong>spécialiste en Suivi-Évaluation</strong>, avec plus de 14 ans d'expérience
-        dans les projets de développement au Niger, dont plus de 8 ans dans des projets financés
-        par de grands bailleurs internationaux comme la <strong>Banque mondiale</strong> et la <strong>BAD</strong>.
-      </p>
-      <p>
-        Ma spécialité : la <strong>gestion axée sur les résultats</strong>. Je conçois des systèmes de suivi,
-        je collecte et j'analyse les données sur le terrain, je suis les indicateurs de performance
-        et je rédige des rapports clairs pour les bailleurs de fonds. J'utilise aussi les outils
-        <strong>SIG</strong> pour cartographier les infrastructures de développement.
-      </p>
-      <p>
-        Ingénieur de formation (Master en Génie Électrique), je travaille principalement dans le
-        secteur de l'<strong>énergie et de l'accès à l'électricité</strong>.
-      </p>
-    </div>
-  </section>
-
-  <!-- ===== Expérience ===== -->
-  <section id="experience" class="section fond-clair">
-    <h2>Expérience professionnelle</h2>
-    <div class="timeline">
+    <!-- ===== Parcours professionnel ===== -->
+    <section id="parcours" class="section">
+      <h2>Parcours professionnel</h2>
 
       <article class="poste">
-        <div class="poste-date">Oct. 2023 – aujourd'hui</div>
-        <div class="poste-carte">
-          <h3>Spécialiste en Suivi-Évaluation</h3>
-          <p class="poste-lieu">Projet HASKÉ – Banque mondiale · UGP HASKÉ-ANERSOL</p>
+        <div class="poste-infos">
+          <p class="poste-dates">Depuis octobre 2023</p>
+          <p class="poste-bailleur">Banque mondiale</p>
+        </div>
+        <div class="poste-detail">
+          <h3>Projet HASKÉ</h3>
+          <p class="poste-role">Spécialiste en Suivi-Évaluation · UGP HASKÉ-ANERSOL</p>
           <ul>
             <li>Mise en place d'un dispositif de suivi-évaluation rigoureux</li>
             <li>Suivi et analyse des indicateurs clés de performance</li>
-            <li>Rédaction de rapports détaillés pour les bailleurs de fonds</li>
-            <li>Intégration de GEMS pour le suivi à distance avec KoBoToolbox</li>
+            <li>Rapports détaillés pour les bailleurs de fonds</li>
+            <li>Suivi à distance avec GEMS et KoBoToolbox</li>
           </ul>
         </div>
       </article>
 
       <article class="poste">
-        <div class="poste-date">Fév. 2018 – Déc. 2024</div>
-        <div class="poste-carte">
-          <h3>Spécialiste en Suivi-Évaluation</h3>
-          <p class="poste-lieu">Projet NESAP – Banque mondiale</p>
+        <div class="poste-infos">
+          <p class="poste-dates">Février 2018 à décembre 2024</p>
+          <p class="poste-bailleur">Banque mondiale</p>
+        </div>
+        <div class="poste-detail">
+          <h3>Projet NESAP</h3>
+          <p class="poste-role">Spécialiste en Suivi-Évaluation</p>
           <ul>
             <li>Outils de suivi-évaluation adaptés aux exigences des bailleurs</li>
-            <li>Intégration de GEMS pour le suivi à distance avec KoBoToolbox</li>
+            <li>Suivi à distance avec GEMS et KoBoToolbox</li>
             <li>Formation et encadrement des équipes aux méthodes de suivi-évaluation</li>
           </ul>
         </div>
       </article>
 
       <article class="poste">
-        <div class="poste-date">Fév. 2012 – Janv. 2018</div>
-        <div class="poste-carte">
-          <h3>Responsable Suivi-Évaluation</h3>
-          <p class="poste-lieu">Projet PASE Safo – Union européenne &amp; PNUD-FEM</p>
+        <div class="poste-infos">
+          <p class="poste-dates">Février 2012 à janvier 2018</p>
+          <p class="poste-bailleur">Union européenne et PNUD-FEM</p>
+        </div>
+        <div class="poste-detail">
+          <h3>Projet PASE Safo</h3>
+          <p class="poste-role">Responsable Suivi-Évaluation</p>
           <ul>
-            <li>Collecte et analyse de données, gestion de la base de données</li>
+            <li>Collecte et analyse des données, gestion de la base de données</li>
             <li>Appui à la planification des activités</li>
-            <li>Appui à la rédaction de TDR de passation de marchés</li>
-            <li>Rédaction des rapports et des rapports contractuels</li>
+            <li>Appui à la rédaction des TDR de passation de marchés</li>
+            <li>Rédaction des rapports d'activité et des rapports contractuels</li>
           </ul>
         </div>
       </article>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ===== Compétences ===== -->
-  <section id="competences" class="section">
-    <h2>Compétences clés</h2>
-    <div class="cartes">
-      <div class="carte">
-        <div class="icone">📊</div>
-        <h3>Suivi-Évaluation</h3>
-        <p>Gestion axée sur les résultats, suivi des indicateurs de performance, reporting stratégique.</p>
-      </div>
-      <div class="carte">
-        <div class="icone">📱</div>
-        <h3>Collecte &amp; analyse de données</h3>
-        <p>Enquêtes terrain et suivi à distance, traitement statistique des données.</p>
-        <div class="tags"><span>KoBoToolbox</span><span>ODK Collect</span><span>SPSS</span><span>Excel</span></div>
-      </div>
-      <div class="carte">
-        <div class="icone">🗺️</div>
-        <h3>SIG &amp; cartographie</h3>
-        <p>Cartographie et analyse spatiale des infrastructures de développement.</p>
-        <div class="tags"><span>ArcGIS</span><span>QGIS</span></div>
-      </div>
-      <div class="carte">
-        <div class="icone">📋</div>
-        <h3>Gestion de projet</h3>
-        <p>Planification, coordination d'équipes et renforcement des capacités.</p>
-        <div class="tags"><span>MS Project</span><span>GEMS</span><span>RUCHE</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Formation ===== -->
-  <section id="formation" class="section fond-clair">
-    <h2>Formation &amp; certifications</h2>
-    <div class="deux-colonnes">
-      <div>
-        <div class="diplome">
-          <div class="icone">🎓</div>
-          <div>
-            <h3>Master en Sciences et Techniques – Génie Électrique</h3>
-            <p>Université Cadi Ayyad, Faculté des Sciences et Techniques de Marrakech (Maroc)</p>
-          </div>
+    <!-- ===== Compétences ===== -->
+    <section id="competences" class="section fond-doux">
+      <h2>Compétences</h2>
+      <div class="competences">
+        <div class="competence">
+          <h3>Suivi-évaluation</h3>
+          <p>Gestion axée sur les résultats, indicateurs de performance, reporting stratégique.</p>
         </div>
-        <h3 class="sous-titre-section">Langues</h3>
-        <div class="langue"><span>Français</span><span class="niveau">Courant</span></div>
-        <div class="barre"><div style="width: 100%"></div></div>
-        <div class="langue"><span>Anglais</span><span class="niveau">Professionnel</span></div>
-        <div class="barre"><div style="width: 70%"></div></div>
+        <div class="competence">
+          <h3>Collecte et analyse de données</h3>
+          <p>Enquêtes terrain et suivi à distance, traitement statistique.</p>
+          <p class="outils">KoBoToolbox · ODK Collect · SPSS · Excel</p>
+        </div>
+        <div class="competence">
+          <h3>SIG et cartographie</h3>
+          <p>Cartographie et analyse spatiale des infrastructures de développement.</p>
+          <p class="outils">ArcGIS · QGIS</p>
+        </div>
+        <div class="competence">
+          <h3>Gestion de projet</h3>
+          <p>Planification, coordination d'équipes, renforcement des capacités.</p>
+          <p class="outils">MS Project · GEMS · RUCHE</p>
+        </div>
       </div>
-      <ul class="liste-certifs">
-        <li>Suivi-Évaluation des projets financés par la Banque mondiale</li>
-        <li>Analyse des données et statistiques pour le développement</li>
-        <li>Gestion axée sur les résultats</li>
-        <li>SIG appliqué au suivi-évaluation</li>
-        <li>Passation des marchés selon les procédures des institutions financières internationales</li>
-        <li>Logiciel de suivi-évaluation RUCHE (NIGELEC)</li>
-        <li>Cartographie des risques des projets et plan d'audit interne</li>
-        <li>Gestion et planification de projet, Management par objectifs (MPO), planification financière</li>
-      </ul>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== Contact ===== -->
-  <section id="contact" class="section contact">
-    <h2>Travaillons ensemble</h2>
-    <p>Vous cherchez un spécialiste en suivi-évaluation pour votre projet ? Contactez-moi.</p>
-    <div class="liens">
-      <a class="bouton" href="mailto:djibo_salifou@yahoo.fr">✉️ djibo_salifou@yahoo.fr</a>
+    <!-- ===== Formation ===== -->
+    <section id="formation" class="section">
+      <h2>Formation</h2>
+      <div class="formation">
+        <div>
+          <h3>Master en Sciences et Techniques, Génie Électrique</h3>
+          <p>Faculté des Sciences et Techniques de Marrakech, Université Cadi Ayyad (Maroc)</p>
+
+          <h3 class="titre-langues">Langues</h3>
+          <p>Français courant · Anglais professionnel</p>
+        </div>
+        <div>
+          <h3>Formations et certifications</h3>
+          <ul class="certifs">
+            <li>Suivi-évaluation des projets financés par la Banque mondiale</li>
+            <li>Analyse des données et statistiques pour le développement</li>
+            <li>Gestion axée sur les résultats</li>
+            <li>SIG appliqué au suivi-évaluation</li>
+            <li>Passation des marchés selon les procédures des institutions financières internationales</li>
+            <li>Logiciel de suivi-évaluation RUCHE (NIGELEC)</li>
+            <li>Cartographie des risques et plan d'audit interne</li>
+            <li>Gestion et planification de projet, management par objectifs, planification financière</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Pour une mission de suivi-évaluation ou un poste sur un projet de développement, écrivez-moi.</p>
+      <a class="email" href="mailto:djibo_salifou@yahoo.fr">djibo_salifou@yahoo.fr</a>
       <!-- Pour afficher votre téléphone, enlevez les signes de commentaire autour de la ligne suivante -->
-      <!-- <a class="bouton contour-sombre" href="tel:+22796844809">📞 +227 96 84 48 09</a> -->
-      <a class="bouton contour-sombre" href="https://www.linkedin.com/in/djibo-salifou-85416b115/" target="_blank">LinkedIn</a>
-      <a class="bouton contour-sombre" href="https://web.facebook.com/salifou.djiboabdou" target="_blank">Facebook</a>
-    </div>
-  </section>
+      <!-- <p class="telephone"><a href="tel:+22796844809">+227 96 84 48 09</a></p> -->
+      <p class="reseaux">
+        <a href="https://www.linkedin.com/in/djibo-salifou-85416b115/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://web.facebook.com/salifou.djiboabdou" target="_blank" rel="noopener">Facebook</a>
+      </p>
+    </section>
+
+  </main>
 
   <footer>
-    <p>© 2026 Salifou Djibo Abdou · Spécialiste Suivi-Évaluation · Niamey, Niger</p>
+    <p>© 2026 Salifou Djibo Abdou · Niamey, Niger</p>
   </footer>
 
 </body>

@@ -1,14 +1,18 @@
 /* Le CSS décrit l'APPARENCE de la page : couleurs, tailles, espacements. */
 
-/* Les couleurs du site, réunies ici pour les changer facilement */
+/* Les couleurs et polices du site, réunies ici pour les changer facilement.
+   Vert et orange : un clin d'œil discret au drapeau du Niger. */
 :root {
-  --bleu-nuit: #0b2545;
-  --bleu: #13315c;
-  --orange: #f4a261;
+  --encre: #17211c;        /* texte principal */
+  --gris: #4d5a53;         /* texte secondaire */
+  --vert: #1d4d3b;         /* couleur principale */
+  --vert-fonce: #143628;
+  --orange: #b4540f;       /* accent, utilisé avec parcimonie */
   --fond: #ffffff;
-  --fond-clair: #f4f6fa;
-  --texte: #1f2937;
-  --texte-doux: #5b6577;
+  --fond-doux: #f3f5f3;
+  --trait: #dde3df;        /* lignes de séparation */
+  --police-titres: "Source Serif 4", Georgia, serif;
+  --police-texte: "Source Sans 3", "Segoe UI", Arial, sans-serif;
 }
 
 * {
@@ -17,460 +21,407 @@
 
 html {
   scroll-behavior: smooth; /* défilement doux quand on clique dans le menu */
+  scroll-padding-top: 80px; /* pour que le menu ne cache pas les titres */
 }
 
 body {
   margin: 0;
-  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  font-family: var(--police-texte);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--encre);
   background: var(--fond);
-  color: var(--texte);
-  line-height: 1.7;
 }
 
 h1, h2, h3 {
-  line-height: 1.25;
+  font-family: var(--police-titres);
+  line-height: 1.2;
+  text-wrap: balance; /* évite un mot seul sur la dernière ligne d'un titre */
 }
 
-/* ===== Barre de navigation ===== */
-.navbar {
+p, li {
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--vert);
+}
+
+/* Contour bien visible pour la navigation au clavier */
+a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ===== En-tête ===== */
+.entete {
   position: sticky;
   top: 0;
   z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 6%;
-  background: rgba(11, 37, 69, 0.97);
+  gap: 16px;
+  padding: 14px max(24px, 6vw);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--trait);
 }
 
-.logo {
+.nom-site {
+  font-family: var(--police-titres);
   font-weight: 700;
-  font-size: 1.4rem;
-  color: white;
+  font-size: 1.1rem;
+  color: var(--encre);
   text-decoration: none;
+  white-space: nowrap;
 }
 
-.logo span {
-  color: var(--orange);
+nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 nav a {
-  margin-left: 22px;
-  color: #d6dde8;
+  color: var(--gris);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 nav a:hover {
-  color: var(--orange);
+  color: var(--vert);
 }
 
-.nav-contact {
-  padding: 6px 16px;
-  border: 1px solid var(--orange);
-  border-radius: 999px;
-  color: var(--orange);
+.lien-contact {
+  color: var(--vert);
 }
 
-/* ===== Section d'accueil ===== */
-.hero {
-  background: linear-gradient(135deg, var(--bleu-nuit), var(--bleu));
-  color: white;
-  padding: 70px 6% 50px;
-}
-
-.hero-contenu {
-  max-width: 1100px;
+/* ===== Accueil ===== */
+.accueil {
+  max-width: 1080px;
   margin: 0 auto;
-  display: flex;
+  padding: 80px max(24px, 6vw) 72px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 64px;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
 }
 
-.badge {
-  display: inline-block;
-  margin: 0 0 12px;
-  padding: 4px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  font-size: 0.9rem;
-}
-
-.hero h1 {
+.accueil h1 {
   margin: 0;
-  font-size: 3rem;
-}
-
-.hero h1 span {
-  color: var(--orange);
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  color: var(--vert-fonce);
 }
 
 .metier {
-  margin: 6px 0 16px;
-  font-size: 1.3rem;
+  margin: 8px 0 20px;
+  font-size: 1.35rem;
   font-weight: 600;
-  color: #d6dde8;
-}
-
-.accroche {
-  max-width: 560px;
-  color: #c3cddc;
-}
-
-.hero-boutons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 26px;
-}
-
-.photo {
-  width: 260px;
-  height: 260px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 6px solid var(--orange);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-}
-
-/* Les chiffres clés */
-.chiffres {
-  max-width: 1100px;
-  margin: 50px auto 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.chiffres div {
-  padding: 18px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.07);
-  text-align: center;
-}
-
-.chiffres strong {
-  display: block;
-  font-size: 2.2rem;
   color: var(--orange);
 }
 
-.chiffres span {
-  font-size: 0.85rem;
-  color: #c3cddc;
+.intro {
+  max-width: 34em;
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--gris);
 }
 
-/* ===== Boutons ===== */
+.boutons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
 .bouton {
   display: inline-block;
-  padding: 11px 24px;
-  border-radius: 999px;
-  background: var(--orange);
-  color: var(--bleu-nuit);
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 2px solid var(--vert);
+  background: var(--vert);
+  color: white;
   font-weight: 600;
   text-decoration: none;
-  border: 2px solid var(--orange);
-  transition: transform 0.2s;
 }
 
 .bouton:hover {
-  transform: translateY(-2px);
+  background: var(--vert-fonce);
+  border-color: var(--vert-fonce);
 }
 
-.bouton.contour {
+.bouton-secondaire {
   background: transparent;
-  color: white;
-  border-color: white;
+  color: var(--vert);
 }
 
-.bouton.contour-sombre {
-  background: transparent;
-  color: var(--bleu-nuit);
-  border-color: var(--bleu-nuit);
+.bouton-secondaire:hover {
+  background: var(--fond-doux);
+  color: var(--vert-fonce);
+}
+
+/* Les trois informations essentielles */
+.faits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+  margin: 44px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--trait);
+}
+
+.faits dt {
+  font-size: 0.9rem;
+  color: var(--gris);
+}
+
+.faits dd {
+  margin: 2px 0 0;
+  font-weight: 600;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 /* ===== Sections ===== */
 .section {
-  padding: 70px 6%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 72px max(24px, 6vw);
 }
 
-.section > * {
-  max-width: 1100px;
+/* Une section avec un fond gris très clair sur toute la largeur */
+.fond-doux {
+  max-width: none;
+  background: var(--fond-doux);
+}
+
+.fond-doux > * {
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.fond-clair {
-  background: var(--fond-clair);
-}
-
 .section h2 {
+  margin: 0 0 40px;
   font-size: 2rem;
-  color: var(--bleu-nuit);
-  margin-top: 0;
-  margin-bottom: 36px;
+  color: var(--vert-fonce);
 }
 
-/* Petit trait orange sous chaque titre */
-.section h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  margin-top: 10px;
-  border-radius: 2px;
-  background: var(--orange);
-}
-
-.apropos {
-  font-size: 1.05rem;
-  color: var(--texte-doux);
-}
-
-.apropos strong {
-  color: var(--texte);
-}
-
-/* ===== Expérience (ligne du temps) ===== */
-.timeline {
-  border-left: 3px solid #d3dbe7;
-  padding-left: 28px;
-}
-
-.poste {
-  position: relative;
-  margin-bottom: 30px;
-}
-
-/* Le rond orange sur la ligne du temps */
-.poste::before {
-  content: "";
-  position: absolute;
-  left: -38px;
-  top: 6px;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  background: var(--orange);
-  border: 3px solid var(--fond-clair);
-}
-
-.poste-date {
-  font-weight: 600;
-  color: var(--orange);
-  margin-bottom: 8px;
-}
-
-.poste-carte {
-  background: white;
-  padding: 22px 26px;
-  border-radius: 12px;
-  box-shadow: 0 4px 18px rgba(11, 37, 69, 0.07);
-}
-
-.poste-carte h3 {
-  margin: 0;
-  color: var(--bleu-nuit);
-}
-
-.poste-lieu {
-  margin: 4px 0 10px;
-  color: var(--texte-doux);
-  font-weight: 600;
-}
-
-.poste-carte ul {
-  margin: 0;
-  padding-left: 20px;
-  color: var(--texte-doux);
-}
-
-/* ===== Cartes de compétences ===== */
-.cartes {
+/* À propos : le titre à gauche, le texte à droite */
+.deux-parties {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+  border-top: 1px solid var(--trait);
 }
 
-.carte {
-  padding: 24px;
-  border-radius: 14px;
-  border: 1px solid #e5e9f0;
-  transition: box-shadow 0.2s, transform 0.2s;
+.texte {
+  max-width: 65ch;
+  font-size: 1.125rem;
 }
 
-.carte:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(11, 37, 69, 0.08);
+.texte p:first-child {
+  margin-top: 0;
 }
 
-.carte h3 {
-  margin: 8px 0;
-  color: var(--bleu-nuit);
+/* ===== Parcours ===== */
+.poste {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+  padding: 32px 0;
+  border-top: 1px solid var(--trait);
 }
 
-.carte p {
-  color: var(--texte-doux);
-  font-size: 0.95rem;
+.poste-infos p {
+  margin: 0;
 }
 
-.icone {
-  font-size: 2rem;
+.poste-dates {
+  font-weight: 600;
 }
 
-/* Les petites étiquettes des logiciels */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+.poste-bailleur {
+  color: var(--gris);
 }
 
-.tags span {
-  padding: 2px 10px;
-  border-radius: 999px;
-  background: #fdebd9;
-  color: #9a4f12;
-  font-size: 0.8rem;
+.poste-detail h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.poste-role {
+  margin: 4px 0 14px;
+  color: var(--orange);
+  font-weight: 600;
+}
+
+.poste-detail ul {
+  margin: 0;
+  padding-left: 1.2em;
+  max-width: 60ch;
+}
+
+.poste-detail li {
+  margin-bottom: 6px;
+}
+
+/* ===== Compétences ===== */
+.competences {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 64px;
+}
+
+.competence {
+  padding-top: 20px;
+  border-top: 2px solid var(--vert);
+}
+
+.competence h3 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+}
+
+.competence p {
+  margin: 0;
+  color: var(--gris);
+}
+
+.competence .outils {
+  margin-top: 10px;
+  color: var(--encre);
   font-weight: 600;
 }
 
 /* ===== Formation ===== */
-.deux-colonnes {
+.formation {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
 }
 
-.diplome {
-  display: flex;
-  gap: 16px;
-  padding: 22px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 18px rgba(11, 37, 69, 0.07);
+.formation h3 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
 }
 
-.diplome h3 {
-  margin: 0 0 6px;
-  color: var(--bleu-nuit);
-}
-
-.diplome p {
+.formation p {
   margin: 0;
-  color: var(--texte-doux);
+  color: var(--gris);
 }
 
-.sous-titre-section {
-  margin-top: 30px;
-  color: var(--bleu-nuit);
+.titre-langues {
+  margin-top: 40px !important;
 }
 
-.langue {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-}
-
-.niveau {
-  color: var(--texte-doux);
-  font-weight: 400;
-}
-
-.barre {
-  height: 8px;
-  margin: 6px 0 16px;
-  border-radius: 4px;
-  background: #dfe5ee;
-}
-
-.barre div {
-  height: 100%;
-  border-radius: 4px;
-  background: var(--orange);
-}
-
-.liste-certifs {
-  list-style: none;
+.certifs {
   margin: 0;
-  padding: 0;
+  padding-left: 1.2em;
 }
 
-.liste-certifs li {
-  padding: 12px 16px 12px 44px;
-  margin-bottom: 10px;
-  background: white;
-  border-radius: 10px;
-  position: relative;
-}
-
-/* La coche orange devant chaque certification */
-.liste-certifs li::before {
-  content: "✓";
-  position: absolute;
-  left: 16px;
-  color: var(--orange);
-  font-weight: 700;
+.certifs li {
+  margin-bottom: 8px;
 }
 
 /* ===== Contact ===== */
 .contact {
+  padding: 80px max(24px, 6vw);
+  background: var(--vert-fonce);
+  color: white;
   text-align: center;
 }
 
-.contact h2::after {
-  margin-left: auto;
-  margin-right: auto;
+.contact h2 {
+  margin: 0 0 12px;
+  font-size: 2rem;
 }
 
 .contact p {
-  color: var(--texte-doux);
+  max-width: 34em;
+  margin: 0 auto;
+  color: #d5e2da;
 }
 
-.liens {
+.email {
+  display: inline-block;
+  margin: 28px 0 20px;
+  font-family: var(--police-titres);
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 600;
+  color: white;
+  text-underline-offset: 6px;
+}
+
+.contact .reseaux {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 24px;
+  gap: 28px;
+}
+
+.reseaux a,
+.telephone a {
+  color: white;
+  font-weight: 600;
 }
 
 /* ===== Pied de page ===== */
 footer {
-  text-align: center;
   padding: 24px;
-  background: var(--bleu-nuit);
-  color: #9fb0c8;
-  font-size: 0.9rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--gris);
 }
 
-/* ===== Adaptation aux tablettes et téléphones ===== */
-@media (max-width: 800px) {
+/* ===== Tablettes et téléphones ===== */
+@media (max-width: 760px) {
+  /* Le menu passe sous le nom et reste utilisable */
+  .entete {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 12px 20px;
+  }
   nav {
-    display: none;
+    gap: 16px;
+    overflow-x: auto;
+    max-width: 100%;
   }
-  .hero-contenu {
-    flex-direction: column-reverse;
-    text-align: center;
+  nav a {
+    font-size: 1rem;
   }
-  .hero-boutons {
-    justify-content: center;
-  }
-  .accroche {
-    margin: 0 auto;
-  }
-  .hero h1 {
-    font-size: 2.2rem;
+  .accueil {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 20px 56px;
   }
   .photo {
-    width: 180px;
-    height: 180px;
+    order: -1; /* la photo passe au-dessus du texte */
+    width: 160px;
   }
-  .chiffres {
-    grid-template-columns: repeat(2, 1fr);
+  .section,
+  .contact {
+    padding: 56px 20px;
   }
-  .deux-colonnes {
+  .deux-parties,
+  .poste,
+  .competences,
+  .formation {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .competences,
+  .formation {
+    gap: 36px;
+  }
+  .section h2 {
+    margin-bottom: 24px;
   }
 }
